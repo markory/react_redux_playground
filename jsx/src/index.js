@@ -1,17 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const App = () => {
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+    const buttonText = 'Click me!';
+    const style = { backgroundColor: 'blue', color: 'white' };
+
+    return (
+        <div>
+            <label className="label" for="name">
+                Enter name:
+            </label>
+            <input id="name" type="text" />
+            <button style={style}>{buttonText}</button>
+        </div>
+    );
+};
+
+ReactDOM.render(<App />, document.querySelector('#root'));
